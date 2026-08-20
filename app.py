@@ -6,14 +6,14 @@ model = joblib.load('xgb_model.jb')
 st.title("House Price Prediction")
 st.write("Enter the Details Below to predict the House Price")
 
-input['OverallQual', 'GrLivArea', 'ExterQual', 'GarageArea',
+inputs = ['OverallQual', 'GrLivArea', 'ExterQual', 'GarageArea',
        'BsmtQual', '1stFlrSF', 'KitchenQual', 'FullBath', 'GarageFinish',
        'YearBuilt', 'YearRemodAdd', 'MasVnrArea', 'Fireplaces', 'GarageType',
        'HeatingQC', 'BsmtFinSF1', 'LotFrontage', 'WoodDeckSF', 'OpenPorchSF',
        'BsmtExposure', 'LotArea', 'LotShape', 'CentralAir']
 
 input_data = {}
-for features in input:
+for features in inputs:
     if features == 'CentralAir':
         input_data[features] = st.selectbox(f"{features}", options=['Yes','No'], index=0)
     else:
