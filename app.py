@@ -26,7 +26,7 @@ for features in inputs:
 if st.button("Predict Price"):
     input_data['CentralAir'] =1 if input_data['CentralAir'] == "Yes" else 0
 
-    input_df = pd.DataFrame([input_data],columns=input)
+    input_df = pd.DataFrame([input_data])
 
     predictions = model.predict(input_df)
     st.success(f"Predicted House Price: ${predictions[0]:,.2f}")
